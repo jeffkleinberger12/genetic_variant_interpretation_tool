@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Genetic Variant Interpretation Tool</title>
+<met charset="UTF-8">
+</head>
+<body style="background-color:white">
+<link rel="stylesheet" type="text/css" href="css/style2.css">
+<h1 style="font-family:arial; text-align:center">Genetic Variant Interpretation Tool</h1>
+<p>To aid our variant interpretation process, we created an openly-available online tool to efficiently classify variants based on the evidence categories outlined in the article: <a href="https://www.acmg.net/docs/Standards_Guidelines_for_the_Interpretation_of_Sequence_Variants.pdf" title="Link to ACMG paper">Richards, et al. <em>Standards and guidelines for the interpretation of sequence variants.</em> 2015.</a> This site displays the evidence categories and descriptions from Table 3 and Table 4 with simple checkboxes for selecting appropriate criteria. The site then incorporates the algorithm in Table 5 to automatically assign the pathogenicity or benign impact based on the selected evidence categories. Since our process often requires analyzing multiple variants per patient, we have also allowed the option of aggregating each variant into an exportable table at the foot of the website for easy documentation of the variant review process for our records. Although this tool is based on the ACMG/AMP Standards and Guidelines, it is not affiliated with ACMG, AMP, or any of the authors of the publication.</p>
+<a href="Genetic_Variant_Interpretation_Tool_compact.html" onClick="confirmation()">Click here to order evidence by strength of criteria</a><br>
+<hr>
+Patient ID:<input type="text" id="patient_id"><br>
+Variant ID:<input type="text" id="variant_id"><br>
+<hr>
+<p class="a"><b><u>Population data</u></b></p>
+<div id="strongpath">
+<button id="ps4">_</button> PS4 The prevalence of the variant in affected individuals is significantly increased compared with the prevalence in controls<br>
+</div>
+<div id="modpath">
+<button id="pm2">_</button> PM2 Absent from controls (or at extremely low frequency if recessive) in Exome Sequencing Project, 1000 Genomes Project, or Exome Aggregation Consortium<br>
+</div>
+<div id="strongben">
+<button id="bs1">_</button> BS1 Allele frequency is greater than expected for disorder<br>
+</div>
+<div id="strongben">
+<button id="bs2">_</button> BS2 Observed in a healthy adult individual for a recessive (homozygous), dominant (heterozygous), or X-linked (hemizygous) disorder, with full penetrance expected at an early age<br>
+</div>
+<div id="autoben">
+<button id="ba1">_</button> BA1 Allele frequency is >5% in Exome Sequencing Project, 1000 Genomes Project, or Exome Aggregation Consortium<br>
+</div>
+<p class="a"><b><u>Computational and predictive data</u></b></p>
+<div id="verystrongpath">
+<button id="pvs1">_</button> PVS1 null variant (nonsense, frameshift, canonical ±1 or 2 splice sites, initiation codon, single or multiexon deletion) in a gene where LOF is a known mechanism of disease<br>
+</div>
+<div id="strongpath">
+<button id="ps1">_</button> PS1 Same amino acid change as a previously established pathogenic variant regardless of nucleotide change<br>
+</div>
+<div id="modpath">
+<button id="pm4">_</button> PM4 Protein length changes as a result of in-frame deletions/insertions in a nonrepeat region or stop-loss variants<br>
+</div>
+<div id="modpath">
+<button id="pm5">_</button> PM5 Novel missense change at an amino acid residue where a different missense change determined to be pathogenic has been seen before<br>
+</div>
+<div id="probpath">
+<button id="pp3">_</button> PP3 Multiple lines of computational evidence support a deleterious effect on the gene or gene product (conservation, evolutionary, splicing impact, etc.)<br>
+</div>
+<div id="probben">
+<button id="bp1">_</button> BP1 Missense variant in a gene for which primarily truncating variants are known to cause disease<br>
+</div>
+<div id="probben">
+<button id="bp3">_</button> BP3 In-frame deletions/insertions in a repetitive region without a known function<br>
+</div>
+<div id="probben">
+<button id="bp4">_</button> BP4 Multiple lines of computational evidence suggest no impact on gene or gene product (conservation, evolutionary, splicing impact, etc.)<br>
+</div>
+<div id="probben">
+<button id="bp7">_</button> BP7 A synonymous (silent) variant for which splicing prediction algorithms predict no impact to the splice consensus sequence nor the creation of a new splice site AND the nucleotide is not highly conserved<br>
+</div>
+<p class="a"><b><u>Functional data</u></b></p>
+<div id="strongpath">
+<button id="ps3">_</button> PS3 Well-established in vitro or in vivo functional studies supportive of a damaging effect on the gene or gene product<br>
+</div>
+<div id="modpath">
+<button id="pm1">_</button> PM1 Located in a mutational hot spot and/or critical and well-established functional domain (e.g., active site of an enzyme) without benign variation<br>
+</div>
+<div id="probpath">
+<button id="pp2">_</button> PP2 Missense variant in a gene that has a low rate of benign missense variation and in which missense variants are a common mechanism of disease<br>
+</div>
+<div id="strongben">
+<button id="bs3">_</button> BS3 Well-established in vitro or in vivo functional studies show no damaging effect on protein function or splicing<br>
+</div>
+<p class="a"><b><u>Segregation data</u></b></p>
+<div id="strongpath">
+<button id="pp1_s">_</button> PP1 (Strong evidence) Cosegregation with disease in multiple affected family members in a gene definitively known to cause the disease<br>
+</div>
+<div id="modpath">
+<button id="pp1_m">_</button> PP1 (Moderate evidence) Cosegregation with disease in multiple affected family members in a gene definitively known to cause the disease<br>
+</div>
+<div id="modpath">
+<button id="pp1">_</button> PP1 Cosegregation with disease in multiple affected family members in a gene definitively known to cause the disease<br>
+</div>
+<div id="strongben">
+<button id="bs4">_</button> BS4 Lack of segregation in affected members of a family<br>
+</div>
+<p class="a"><b><u>De novo data</u></b></p>
+<div id="strongpath">
+<button id="ps2">_</button> PS2 De novo (both maternity and paternity confirmed) in a patient with the disease and no family history<br>
+</div>
+<div id="modpath">
+<button id="pm6">_</button> PM6 Assumed de novo, but without confirmation of paternity and maternity<br>
+</div>
+<p class="a"><b><u>Allelic data</u></b></p>
+<div id="modpath">
+<button id="pm3">_</button> PM3 For recessive disorders, detected in trans with a pathogenic variant<br>
+</div>
+<div id="probben">
+<button id="bp2">_</button> BP2 Observed in trans with a pathogenic variant for a fully penetrant dominant gene/disorder or observed in cis with a pathogenic variant in any inheritance pattern<br>
+</div>
+<p class="a"><b><u>Other database data</u></b></p>
+<div id="probpath">
+<button id="pp5">_</button> PP5 Reputable source recently reports variant as pathogenic, but the evidence is not available to the laboratory to perform an independent evaluation
+</div>
+<div id="probben">
+<button id="bp6">_</button> BP6 Reputable source recently reports variant as benign, but the evidence is not available to the laboratory to perform an independent evaluation<br>
+</div>
+<p class="a"><b><u>Other data</u></b></p>
+<div id="probpath">
+<button id="pp4">_</button> PP4 Patient’s phenotype or family history is highly specific for a disease with a single genetic etiology<br>
+</div>
+<div id="probben">
+<button id="bp5">_</button> BP5 Variant found in a case with an alternate molecular basis for disease<br>
+</div>
+<p class="a"><b><u>Artifact data</u></b></p>
+<div id="artifactdesign">
+<button id="artifact">_</button> Sequencing artifact as determined by depth, quality, or other previously reviewed data<br>
+</div>
+
+<h2>Variant Classification: <div id="acmgclass">None</div></h2>
+<div id="dvData"><table id="myTableData" border="1">
+	<caption id="patient_table">Patient Name</caption>
+		<tr>
+			<th>Variant</th>
+			<th>Effect</th>
+			<th>Evidence</th>
+			<th>To delete</th>
+		</tr>
+</table></div><br>
+<input type="button" id="add_variant" value="Add Variant to Table" onClick="includeData()"><br><br>
+<a href="#" id ="export" type='button'>Download Table as CSV
+</a><br><br>
+<input type="button" onClick="history.go(0)" value="Clear Table"><br>
+</div>
+<p><small>Please note that the text of the variant evidence has been pulled directly from Richards, et al. <em>Genet Med.</em> 2015 May;17(5). This site does not claim authorship of any of the variant evidence descriptions.<br><br>
+This tool is based on the published <a href="https://www.acmg.net/docs/Standards_Guidelines_for_the_Interpretation_of_Sequence_Variants.pdf">ACMG/AMP Standards and Guidelines [Genet Med (2015)]</a>. Anyone using this tool should be familiar with that publication. Individuals or institutions choosing to use this tool for clinical variant classification purposes assume legal responsibility for the consequences of its use. The authors make no warranty, express or implied, nor assume any legal liability or responsibility for any purpose for which the tool is used.<br><br>
+Kleinberger JW, Maloney KA, Pollin TI, Jeng LJB (submitted).<br><br>
+For use in publications, please contact:<br>
+Linda Jeng, MD, PhD, FACMG<br>
+<a href="mailto:ljeng@som.umaryland.edu">ljeng@som.umaryland.edu</a>
+ 
+</small>
+</p>
+
+<script>
+
+</script>
+<script type='text/javascript' src='https://code.jquery.com/jquery-1.11.0.min.js'></script>
+<script src="js/app.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+p.pvs{
+border-style: solid;
+border-color: red;
+padding: 8px;
+}
+p.pm{
+border-style: solid;
+border-color: orange;
+padding: 8px;
+}
+p.pp{
+border-style: solid;
+border-color: green;
+padding: 8px;
+}
+p.bp{
+border-style: solid;
+border-color: blue;
+padding: 8px;
+}
+p.bs{
+border-style: solid;
+border-color: #CC00CC;
+padding: 8px;
+}
+p.art{
+border-style: solid;
+border-color: black;
+padding: 8px;
+}

@@ -1,0 +1,43 @@
+p.a{
+margin-bottom: 0em;
+}
+#verystrongpath {
+background-color: #D63333;
+padding: 4px;
+font-weight: bold;
+}
+#strongpath {
+background-color: #FF3333;
+padding: 4px;
+font-weight: bold;
+}
+#modpath{
+background-color: #FF8533;
+padding: 4px;
+font-weight: bold;
+}
+#probpath{
+background-color: #33AD5C;
+padding: 4px;
+font-weight: bold;
+}
+#probben{
+background-color: #5C5CD6;
+padding: 4px;
+font-weight: bold;
+}
+#strongben{
+background-color: #AD5CAD;
+padding: 4px;
+font-weight: bold;
+}
+#autoben{
+background-color: #944D94;
+padding: 4px;
+font-weight: bold;
+}
+#artifactdesign{
+background-color: #ADADAD;
+padding: 4px;
+font-weight: bold;
+}
