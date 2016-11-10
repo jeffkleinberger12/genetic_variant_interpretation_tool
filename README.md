@@ -6,14 +6,14 @@ Genetic Variant Interpretation Tool
 version 1.0
 date 2016-11-09
 
-Synopsis
+Synopsis:
 This project is an HTML file to incorporate the ACMG Guidelines for Variant Interpretation (Richards et al. 2015) into a site that allows criteria to be selected, interpretation to be returned, and results to be aggregated in a CSV output.
 
-Function
+Function:
 If the file is opened in most browsers, it should function correctly.
 The html file pulls formatting data from the css/style.css and css/style2.css files. As each box is selected, the algorithm from the js/app.js file is executed to tally the levels of evidence and return a variant interpretation. The data from the variant annotation, variant name, patient name, and variant interpretation can be recorded into the table at the bottom of the file by clicking "Add Variant to Table" which executes the function in js/app.js. The table can also be downloaded as a csv or cleared through functions in js/app.js. Finally, the order of the variant evidence categories and checkboxes can be changed through the link to the alternate version of the html file.
 
-Motivation
+Motivation:
 This was created to expedite the process for variant interpretation for genetic sequencing data.
 
 References:
